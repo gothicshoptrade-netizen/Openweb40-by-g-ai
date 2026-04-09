@@ -12,12 +12,15 @@ export default function HeroSection() {
       {/* Background photo */}
       <div className="absolute inset-0">
         <img
-          src="/hero-bg.png"
+          src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=1920"
           alt="Загородный дом с установленным интернетом в Калужской области"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-60"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "https://picsum.photos/seed/house/1920/1080";
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
       </div>
 
       {/* Content */}

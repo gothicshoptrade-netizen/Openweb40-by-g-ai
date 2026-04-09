@@ -8,6 +8,7 @@ import LandingPage from "@/pages/LandingPage";
 import ServicesPage from "@/pages/ServicesPage";
 import PortfolioPage from "@/pages/PortfolioPage";
 import BlogPage from "@/pages/BlogPage";
+import BlogPostPage from "@/pages/BlogPostPage";
 import ContactsPage from "@/pages/ContactsPage";
 import ChatWidget from "@/components/shared/ChatWidget";
 
@@ -30,6 +31,7 @@ function Router() {
         <Route path="/services" component={ServicesPage} />
         <Route path="/portfolio" component={PortfolioPage} />
         <Route path="/blog" component={BlogPage} />
+        <Route path="/blog/:slug" component={BlogPostPage} />
         <Route path="/contacts" component={ContactsPage} />
         <Route component={NotFound} />
       </Switch>

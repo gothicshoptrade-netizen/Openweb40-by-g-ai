@@ -38,27 +38,19 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Row 3: Calculator + Testimonials */}
+          {/* Row 3: Calculator + FAQ */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24">
             <div className="lg:col-span-5 bento-card">
               <CalculatorSection />
             </div>
             <div className="lg:col-span-7 bento-card">
-              <TestimonialsSection />
-            </div>
-          </div>
-
-          {/* Row 4: Blog */}
-          <div className="bento-card">
-            <BlogSection />
-          </div>
-
-          {/* Row 5: FAQ + Contact */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 pb-32 md:pb-40">
-            <div className="lg:col-span-6 bento-card">
               <FaqSection />
             </div>
-            <div className="lg:col-span-6 bento-card">
+          </div>
+
+          {/* Row 4: Contact */}
+          <div className="pb-32 md:pb-40">
+            <div className="bento-card">
               <ContactFormSection />
             </div>
           </div>
