@@ -16,10 +16,27 @@ const mapPins = [
 
 export default function ContactsPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
 
   const handleChange = (field: keyof typeof form, val: string) => setForm((p) => ({ ...p, [field]: val }));
-  const handleSubmit = () => { if (form.name && form.phone) setFormSubmitted(true); };
+  const handleSubmit = async () => {
+    if (form.name && form.phone) {
+      setIsSubmitting(true);
+      try {
+        await fetch("/api/submit-form", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        });
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setIsSubmitting(false);
+        setFormSubmitted(true);
+      }
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -45,7 +62,7 @@ export default function ContactsPage() {
                 { icon: Phone, title: "Телефон", lines: ["+7 (910) 595-46-68", "+7 (910) 000-00-00 (WhatsApp)"], color: "text-primary", bg: "bg-primary/15" },
                 { icon: Mail, title: "Email", lines: ["info@openweb40.ru", "support@openweb40.ru"], color: "text-accent", bg: "bg-accent/15" },
                 { icon: MapPin, title: "Офис", lines: ["г. Калуга, ул. Кирова, д. 1, офис 101", "Обслуживаем всю Калужскую область"], color: "text-primary", bg: "bg-primary/15" },
-                { icon: Clock, title: "Режим работы", lines: ["Пн – Пт: 9:00 – 20:00", "Сб – Вс: 10:00 – 18:00", "Техподдержка: 24/7"], color: "text-accent", bg: "bg-accent/15" },
+                { icon: Clock, title: "Режим работы", lines: ["Пн – Вс: 9:00 – 21:00", "Техподдержка: 24/7"], color: "text-accent", bg: "bg-accent/15" },
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -71,7 +88,7 @@ export default function ContactsPage() {
                     { label: "Telegram", href: "https://t.me/krisdev13" },
                     { label: "WhatsApp", href: "https://wa.me/79105954668" },
                     { label: "VKontakte", href: "#" },
-                    { label: "Одноклассники", href: "#" },
+                    { label: "Messenger Max", href: "#" },
                   ].map((s) => (
                     <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                       className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-white/25 text-sm text-muted-foreground hover:text-foreground transition-all"
@@ -122,12 +139,12 @@ export default function ContactsPage() {
                     </div>
                     <Button
                       className="w-full h-12 bg-primary hover:bg-primary/90 text-white shadow-[0_0_20px_rgba(59,130,246,0.4)] font-semibold"
-                      disabled={!form.name || !form.phone}
+                      disabled={!form.name || !form.phone || isSubmitting}
                       onClick={handleSubmit}
                       data-testid="btn-contact-submit"
                     >
                       <Send className="w-4 h-4 mr-2" />
-                      Отправить сообщение
+                      {isSubmitting ? "Отправка..." : "Отправить сообщение"}
                     </Button>
                     <p className="text-xs text-muted-foreground text-center">
                       Нажимая «Отправить», вы соглашаетесь с политикой конфиденциальности
@@ -141,33 +158,15 @@ export default function ContactsPage() {
           {/* Interactive map visualization */}
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-6 text-center">Зона обслуживания</h2>
-            <div className="relative h-80 rounded-2xl bg-card border border-white/10 overflow-hidden">
-              <div className="absolute inset-0 bg-grid-white opacity-[0.07]" />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-background" />
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 600 320" fill="none">
-                <path
-                  d="M120,80 C180,50 300,40 420,65 C500,80 560,130 540,200 C520,260 440,290 300,280 C160,270 80,230 70,160 C60,110 80,90 120,80Z"
-                  fill="rgba(59,130,246,0.08)" stroke="rgba(59,130,246,0.3)" strokeWidth="1.5"
-                />
-                <text x="280" y="175" fill="rgba(255,255,255,0.3)" fontSize="14" textAnchor="middle">
-                  Калужская область
-                </text>
-              </svg>
-              {mapPins.map((pin, i) => (
-                <div key={i} className="absolute flex flex-col items-center"
-                  style={{ top: pin.top, left: pin.left, transform: "translate(-50%,-50%)" }}>
-                  <div className="relative">
-                    <div className="w-5 h-5 rounded-full bg-primary border-2 border-white/60 shadow-[0_0_12px_rgba(59,130,246,0.9)]" />
-                    <div className="absolute inset-0 rounded-full bg-primary/40 animate-ping" />
-                  </div>
-                  <div className="mt-1.5 px-2 py-0.5 rounded bg-background/90 text-xs text-white/80 whitespace-nowrap font-medium">
-                    {pin.label}
-                  </div>
-                </div>
-              ))}
-              <div className="absolute bottom-4 left-4 text-xs text-muted-foreground">
-                Выезжаем в любой населённый пункт Калужской области
-              </div>
+            <div className="relative h-96 rounded-2xl bg-card border border-white/10 overflow-hidden">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A32514101e13589b1b6890f91e92d80f836936c53e8705021e1022f186c7d7102&amp;source=constructor"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                className="absolute inset-0"
+                title="Карта зоны обслуживания Калужской области"
+              ></iframe>
             </div>
           </div>
         </div>

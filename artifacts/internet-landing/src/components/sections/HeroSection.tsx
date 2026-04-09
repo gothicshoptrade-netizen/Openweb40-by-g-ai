@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <img
           src="/hero-bg.png"
-          alt=""
+          alt="Загородный дом с установленным интернетом в Калужской области"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent" />

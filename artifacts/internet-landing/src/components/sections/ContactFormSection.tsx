@@ -9,6 +9,7 @@ type Step = 1 | 2 | 3;
 export default function ContactFormSection() {
   const [step, setStep] = useState<Step>(1);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [locating, setLocating] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -26,8 +27,20 @@ export default function ContactFormSection() {
   const canProceedStep2 = form.address.trim() && form.area.trim();
   const canProceedStep3 = form.time.trim();
 
-  const handleSubmit = () => {
-    setSubmitted(true);
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    try {
+      await fetch("/api/submit-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   const progressWidth = `${((step - 1) / 2) * 100}%`;
@@ -61,7 +74,7 @@ export default function ContactFormSection() {
             {[
               { icon: Phone, title: "Телефон", value: "+7 (910) 595-46-68" },
               { icon: MapPin, title: "Зона обслуживания", value: "Калуга и вся область" },
-              { icon: Clock, title: "Режим работы", value: "Пн-Вс: 9:00 – 20:00\nТехподдержка 24/7" },
+              { icon: Clock, title: "Режим работы", value: "Пн-Вс: 9:00 – 21:00\nТехподдержка 24/7" },
             ].map((item, i) => {
               const Icon = item.icon;
               return (
@@ -259,11 +272,11 @@ export default function ContactFormSection() {
                       </Button>
                       <Button
                         className="flex-1 h-12 bg-accent hover:bg-accent/90 text-white shadow-[0_0_25px_rgba(139,92,246,0.5)] rounded-xl"
-                        disabled={!canProceedStep3}
+                        disabled={!canProceedStep3 || isSubmitting}
                         onClick={handleSubmit}
                         data-testid="btn-submit-form"
                       >
-                        Отправить заявку
+                        {isSubmitting ? "Отправка..." : "Отправить заявку"}
                       </Button>
                     </div>
                     <p className="text-xs text-muted-foreground text-center mt-4">
