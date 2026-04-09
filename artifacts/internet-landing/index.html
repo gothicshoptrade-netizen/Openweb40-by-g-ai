@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, viewport-fit=cover" />
+
+    <!-- ═══════════════════════════════════════════
+         PRIMARY SEO
+    ═══════════════════════════════════════════ -->
+    <title>Openweb40.ru — Интернет для загородного дома | Калуга и область</title>
+    <meta name="title" content="Openweb40.ru — Интернет для загородного дома | Калуга и область" />
+    <meta name="description" content="Стабильный высокоскоростной интернет для дачи, коттеджа и деревни в Калужской области. 4G/5G агрегация, спутниковый интернет, Mesh Wi-Fi. Установка за 1–2 дня. Тарифы от 2 990 ₽/мес. Бесплатный выезд замерщика." />
+    <meta name="keywords" content="интернет загородный дом, интернет дача Калуга, 4G интернет деревня, интернет для коттеджа, интернет Калужская область, провайдер загородный дом, Openweb40, интернет в деревне Калуга" />
+    <meta name="author" content="Openweb40.ru" />
+    <meta name="copyright" content="© 2024 Openweb40.ru" />
+    <meta name="application-name" content="Openweb40.ru" />
+    <meta name="generator" content="Vite + React" />
+    <meta name="rating" content="general" />
+    <meta name="language" content="Russian" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Robots — разрешаем AI-сканерам полный доступ -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href="https://openweb40.ru/" />
+    <link rel="alternate" hreflang="ru" href="https://openweb40.ru/" />
+    <link rel="alternate" hreflang="x-default" href="https://openweb40.ru/" />
+
+    <!-- ═══════════════════════════════════════════
+         GEO META
+    ═══════════════════════════════════════════ -->
+    <meta name="geo.region" content="RU-KLU" />
+    <meta name="geo.placename" content="Калуга, Калужская область" />
+    <meta name="geo.position" content="54.5293;36.2754" />
+    <meta name="ICBM" content="54.5293, 36.2754" />
+
+    <!-- ═══════════════════════════════════════════
+         OPEN GRAPH
+    ═══════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://openweb40.ru/" />
+    <meta property="og:title" content="Openweb40.ru — Интернет для загородного дома | Калуга и область" />
+    <meta property="og:description" content="Стабильный интернет для дачи, коттеджа и деревни в Калужской области. Установка за 1–2 дня. Тарифы от 2 990 ₽/мес. Бесплатный выезд замерщика." />
+    <meta property="og:image" content="https://openweb40.ru/opengraph.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Openweb40.ru — интернет для загородного дома в Калужской области" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Openweb40.ru" />
+
+    <!-- ═══════════════════════════════════════════
+         TWITTER / X
+    ═══════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@openweb40" />
+    <meta name="twitter:creator" content="@krisdev13" />
+    <meta name="twitter:title" content="Openweb40.ru — Интернет для загородного дома | Калуга" />
+    <meta name="twitter:description" content="Стабильный интернет для дачи и коттеджа в Калужской области. Установка 1–2 дня. От 2 990 ₽/мес." />
+    <meta name="twitter:image" content="https://openweb40.ru/opengraph.jpg" />
+    <meta name="twitter:image:alt" content="Openweb40.ru — интернет для загородного дома" />
+
+    <!-- ═══════════════════════════════════════════
+         PWA & ICONS
+    ═══════════════════════════════════════════ -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#08091A" />
+    <meta name="msapplication-TileColor" content="#08091A" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Openweb40" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- ═══════════════════════════════════════════
+         PERFORMANCE — PRELOADS (Critical for LCP)
+    ═══════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://yandex.ru" />
+
+    <!-- Preload hero background image — critical for LCP score -->
+    <link rel="preload" as="image" href="/hero-bg.png" fetchpriority="high" />
+
+    <!-- Inter font with display=swap for Largest Contentful Paint -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ═══════════════════════════════════════════
+         STRUCTURED DATA — JSON-LD (@graph pattern)
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+
+        {
+          "@type": "WebSite",
+          "@id": "https://openweb40.ru/#website",
+          "url": "https://openweb40.ru/",
+          "name": "Openweb40.ru",
+          "description": "Интернет-провайдер для загородных домов, дач и коттеджей в Калужской области",
+          "inLanguage": "ru-RU",
+          "publisher": { "@id": "https://openweb40.ru/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://openweb40.ru/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+
+        {
+          "@type": "Organization",
+          "@id": "https://openweb40.ru/#organization",
+          "name": "Openweb40.ru",
+          "url": "https://openweb40.ru",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://openweb40.ru/favicon.svg",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://openweb40.ru/opengraph.jpg",
+          "telephone": "+79105954668",
+          "email": "info@openweb40.ru",
+          "foundingDate": "2019",
+          "description": "Провайдер высокоскоростного интернета для загородных домов, дач и коттеджей Калужской области",
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Калужская область",
+            "containsPlace": [
+              { "@type": "City", "name": "Калуга" },
+              { "@type": "City", "name": "Обнинск" },
+              { "@type": "City", "name": "Малоярославец" },
+              { "@type": "City", "name": "Жуков" },
+              { "@type": "City", "name": "Таруса" },
+              { "@type": "City", "name": "Козельск" }
+            ]
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+79105954668",
+              "contactType": "customer service",
+              "availableLanguage": "Russian",
+              "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                "opens": "00:00",
+                "closes": "23:59"
+              }
+            },
+            {
+              "@type": "ContactPoint",
+              "contactType": "technical support",
+              "telephone": "+79105954668",
+              "availableLanguage": "Russian"
+            }
+          ],
+          "sameAs": [
+            "https://t.me/krisdev13",
+            "https://wa.me/79105954668"
+          ]
+        },
+
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://openweb40.ru/#localbusiness",
+          "name": "Openweb40.ru",
+          "alternateName": "Опенвеб40",
+          "description": "Интернет-провайдер для загородных домов, дач и коттеджей в Калужской области. Профессиональный монтаж оборудования, 4G/5G агрегация, спутниковый интернет, Mesh Wi-Fi.",
+          "url": "https://openweb40.ru",
+          "telephone": "+79105954668",
+          "email": "info@openweb40.ru",
+          "image": "https://openweb40.ru/opengraph.jpg",
+          "logo": "https://openweb40.ru/favicon.svg",
+          "priceRange": "2990–7990 ₽/мес",
+          "currenciesAccepted": "RUB",
+          "paymentAccepted": "Cash, Credit Card, SBP",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Кирова, д. 1, офис 101",
+            "addressLocality": "Калуга",
+            "addressRegion": "Калужская область",
+            "postalCode": "248000",
+            "addressCountry": "RU"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 54.5293,
+            "longitude": 36.2754
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+              "opens": "09:00",
+              "closes": "20:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Saturday","Sunday"],
+              "opens": "10:00",
+              "closes": "18:00"
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "87",
+            "reviewCount": "87"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Калужская область"
+          },
+          "parentOrganization": { "@id": "https://openweb40.ru/#organization" },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Тарифы на интернет для загородного дома",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "@id": "https://openweb40.ru/#offer-standart",
+                "name": "Стандарт",
+                "description": "Интернет до 30 Мбит/с для дачи и сезонного использования. Покрытие до 100 м², до 5 устройств.",
+                "price": "2990",
+                "priceCurrency": "RUB",
+                "priceValidUntil": "2026-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://openweb40.ru/#solutions"
+              },
+              {
+                "@type": "Offer",
+                "@id": "https://openweb40.ru/#offer-optimal",
+                "name": "Оптимальный",
+                "description": "Интернет до 100 Мбит/с для постоянного проживания. Покрытие до 300 м², VPN.",
+                "price": "4990",
+                "priceCurrency": "RUB",
+                "priceValidUntil": "2026-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://openweb40.ru/#solutions"
+              },
+              {
+                "@type": "Offer",
+                "@id": "https://openweb40.ru/#offer-maximum",
+                "name": "Максимум",
+                "description": "Интернет до 300 Мбит/с для больших домов и бизнеса. Неограниченное покрытие, персональный менеджер 24/7.",
+                "price": "7990",
+                "priceCurrency": "RUB",
+                "priceValidUntil": "2026-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://openweb40.ru/#solutions"
+              }
+            ]
+          }
+        },
+
+        {
+          "@type": "Service",
+          "@id": "https://openweb40.ru/#service-internet",
+          "name": "Интернет для загородного дома",
+          "serviceType": "Подключение интернета",
+          "provider": { "@id": "https://openweb40.ru/#organization" },
+          "areaServed": { "@type": "AdministrativeArea", "name": "Калужская область" },
+          "description": "Подключение стабильного высокоскоростного интернета для дачи, коттеджа, деревни. 4G/5G агрегация, спутник, Mesh Wi-Fi. Монтаж за 1–2 дня.",
+          "offers": [
+            { "@id": "https://openweb40.ru/#offer-standart" },
+            { "@id": "https://openweb40.ru/#offer-optimal" },
+            { "@id": "https://openweb40.ru/#offer-maximum" }
+          ],
+          "hasOfferCatalog": { "@id": "https://openweb40.ru/#localbusiness" }
+        },
+
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://openweb40.ru/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://openweb40.ru/" },
+            { "@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://openweb40.ru/services" },
+            { "@type": "ListItem", "position": 3, "name": "Портфолио", "item": "https://openweb40.ru/portfolio" },
+            { "@type": "ListItem", "position": 4, "name": "Блог", "item": "https://openweb40.ru/blog" },
+            { "@type": "ListItem", "position": 5, "name": "Контакты", "item": "https://openweb40.ru/contacts" }
+          ]
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "https://openweb40.ru/#faq",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["#faq"]
+          },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Сколько времени занимает установка интернета в загородном доме?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "В среднем монтаж занимает 2–4 часа на объекте. Для большого дома или сложного рельефа — до одного рабочего дня. Выезд замерщика происходит в течение 24 часов. Итого: от заявки до интернета — 1–2 дня."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Какое оборудование используется для подключения интернета на даче?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Работаем с оборудованием Mikrotik, Ubiquiti, TP-Link, HUAWEI. Для каждого объекта подбираем оптимальное решение: 4G/5G агрегация, спутник или направленная радиосвязь. Всё сертифицировано и с официальной гарантией."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Работает ли интернет зимой в загородном доме?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Да, оборудование работает при температуре от -40°C до +70°C. За 5 лет работы не было ни одного выхода из строя из-за морозов. Специально выбираем оборудование с промышленными характеристиками для уличного применения."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Какая гарантия предоставляется на интернет-подключение?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Гарантия зависит от пакета: Стандарт — 1 год, Оптимальный — 2 года, Максимум — 3 года. Бесплатно устраняем неисправности оборудования и перенастраиваем сеть в течение гарантийного срока."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Какие способы оплаты доступны?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Наличные, карта (Visa, Mastercard, МИР), СБП, безналичный перевод для юрлиц. Рассрочка на оборудование до 12 месяцев. Ежемесячная абонентская плата — автоматически или вручную."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "В каких районах Калужской области вы работаете?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Вся Калужская область: Калуга, Обнинск, Малоярославец, Жуков, Кондрово, Таруса, Козельск и все прилегающие районы. Выезжаем в отдалённые деревни и посёлки."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Какую скорость интернета можно ожидать на даче?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Стандарт — 20–30 Мбит/с, Оптимальный — 50–100 Мбит/с, Максимум — 150–300 Мбит/с. Замерщик тестирует сигнал на месте и гарантирует минимальную скорость перед подписанием договора."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Есть ли техническая поддержка 24/7?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Техподдержка 24/7 для всех тарифов. Стандарт — телефон и email. Оптимальный — приоритетная поддержка, ответ за 30 мин. Максимум — персональный менеджер и удалённый мониторинг вашей сети в реальном времени."
+              }
+            }
+          ]
+        },
+
+        {
+          "@type": "WebPage",
+          "@id": "https://openweb40.ru/#webpage",
+          "url": "https://openweb40.ru/",
+          "name": "Openweb40.ru — Интернет для загородного дома | Калуга и область",
+          "description": "Стабильный высокоскоростной интернет для дачи, коттеджа и деревни в Калужской области. Установка за 1–2 дня. Тарифы от 2 990 ₽/мес.",
+          "inLanguage": "ru-RU",
+          "isPartOf": { "@id": "https://openweb40.ru/#website" },
+          "about": { "@id": "https://openweb40.ru/#localbusiness" },
+          "breadcrumb": { "@id": "https://openweb40.ru/#breadcrumb" },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".hero-desc", "#solutions"]
+          }
+        }
+
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

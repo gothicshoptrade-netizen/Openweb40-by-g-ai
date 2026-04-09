@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Openweb40.ru",
+  "name_for_model": "openweb40",
+  "description_for_human": "Интернет-провайдер для загородных домов, дач и коттеджей в Калужской области. Тарифы, подключение, техподдержка.",
+  "description_for_model": "Openweb40.ru — интернет-провайдер в Калужской области России. Предоставляет услуги подключения высокоскоростного интернета (4G/5G агрегация, спутник, Mesh Wi-Fi) для загородных домов, дач и коттеджей. Тарифы: Стандарт 2990 руб/мес (30 Мбит/с), Оптимальный 4990 руб/мес (100 Мбит/с), Максимум 7990 руб/мес (300 Мбит/с). Установка за 1-2 дня. Телефон: +7 (910) 595-46-68.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://openweb40.ru/llms.txt"
+  },
+  "logo_url": "https://openweb40.ru/favicon.svg",
+  "contact_email": "info@openweb40.ru",
+  "legal_info_url": "https://openweb40.ru/"
+}

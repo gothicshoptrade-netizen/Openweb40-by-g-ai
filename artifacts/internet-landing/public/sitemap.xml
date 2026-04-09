@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://openweb40.ru/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://openweb40.ru/"/>
+    <image:image>
+      <image:loc>https://openweb40.ru/opengraph.jpg</image:loc>
+      <image:title>Openweb40.ru — Интернет для загородного дома в Калужской области</image:title>
+      <image:caption>Стабильный интернет для дачи, коттеджа и деревни. Установка за 1–2 дня.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://openweb40.ru/services</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://openweb40.ru/services"/>
+  </url>
+
+  <url>
+    <loc>https://openweb40.ru/portfolio</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://openweb40.ru/portfolio"/>
+  </url>
+
+  <url>
+    <loc>https://openweb40.ru/blog</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://openweb40.ru/blog"/>
+  </url>
+
+  <url>
+    <loc>https://openweb40.ru/contacts</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://openweb40.ru/contacts"/>
+  </url>
+
+</urlset>
