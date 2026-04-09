@@ -12,7 +12,7 @@ const articles = [
     date: "1 апреля 2026",
     readTime: "7 мин",
     tags: ["4G", "оборудование", "антенны"],
-    image: "https://picsum.photos/seed/antenna/800/600",
+    image: "https://pollinations.ai/p/4G%20internet%20antenna%20on%20a%20country%20house%20roof%20modern%20tech?width=800&height=600&seed=1&model=flux",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const articles = [
     date: "25 марта 2026",
     readTime: "5 мин",
     tags: ["Wi-Fi", "mesh", "покрытие"],
-    image: "https://picsum.photos/seed/wifi/800/600",
+    image: "https://pollinations.ai/p/mesh%20wifi%20system%20in%20a%20large%20modern%20luxury%20house%20interior?width=800&height=600&seed=2&model=flux",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const articles = [
     date: "18 марта 2026",
     readTime: "9 мин",
     tags: ["спутник", "4G", "сравнение"],
-    image: "https://picsum.photos/seed/satellite/800/600",
+    image: "https://pollinations.ai/p/satellite%20dish%20and%204G%20antenna%20comparison%20on%20a%20rural%20house?width=800&height=600&seed=3&model=flux",
   },
 ];
 

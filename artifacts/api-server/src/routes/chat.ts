@@ -8,7 +8,7 @@ const SYSTEM_PROMPT = `Ты — AI-помощник компании Openweb40.r
 Твоя задача — помогать потенциальным клиентам: отвечать на вопросы об услугах, тарифах, подключении и зоне покрытия. Говори по-русски, дружелюбно и кратко.
 
 Ключевые факты о компании:
-- Телефон: +7 (910) 595-46-68 (Пн–Пт 9:00–20:00, Сб–Вс 10:00–18:00, техподдержка 24/7)
+- Телефон: +7 (910) 595-46-68 (Пн–Вс 9:00–21:00, техподдержка 24/7)
 - Email: info@openweb40.ru
 - Telegram: @krisdev13
 
@@ -48,11 +48,10 @@ function createClient() {
 }
 
 const MODELS = [
-  "google/gemini-2.5-flash-free",
-  "meta-llama/llama-3-8b-instruct:free",
-  "mistralai/mistral-7b-instruct:free",
-  "openchat/openchat-7b:free",
-  "huggingfaceh4/zephyr-7b-beta:free",
+  "google/gemini-2.0-flash-exp:free",
+  "google/gemini-flash-1.5-8b",
+  "google/gemini-flash-1.5",
+  "meta-llama/llama-3.1-8b-instruct:free",
 ];
 
 router.post("/chat", async (req, res) => {

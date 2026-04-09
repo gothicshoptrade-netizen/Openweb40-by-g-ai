@@ -5,6 +5,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Link } from "wouter";
 import { motion } from "motion/react";
 
 // Map pins visualization for Kaluga region
@@ -61,8 +62,8 @@ export default function ContactsPage() {
             {/* Contact info */}
             <div className="space-y-6">
               {[
-                { icon: Phone, title: "Телефон", lines: ["+7 (910) 595-46-68", "+7 (910) 000-00-00 (WhatsApp)"], color: "text-primary", bg: "bg-primary/15" },
-                { icon: Mail, title: "Email", lines: ["info@openweb40.ru", "support@openweb40.ru"], color: "text-accent", bg: "bg-accent/15" },
+                { icon: Phone, title: "Телефон", lines: ["+7 (910) 595-46-68"], color: "text-primary", bg: "bg-primary/15" },
+                { icon: Mail, title: "Email", lines: ["info@openweb40.ru"], color: "text-accent", bg: "bg-accent/15" },
                 { icon: MapPin, title: "Офис", lines: ["г. Калуга, ул. Кирова, д. 1, офис 101", "Обслуживаем всю Калужскую область"], color: "text-primary", bg: "bg-primary/15" },
                 { icon: Clock, title: "Режим работы", lines: ["Пн – Вс: 9:00 – 21:00", "Техподдержка: 24/7"], color: "text-accent", bg: "bg-accent/15" },
               ].map((item, i) => {
@@ -96,8 +97,10 @@ export default function ContactsPage() {
                   {[
                     { label: "Telegram", href: "https://t.me/krisdev13" },
                     { label: "WhatsApp", href: "https://wa.me/79105954668" },
-                    { label: "VKontakte", href: "#" },
                     { label: "Messenger Max", href: "#" },
+                    { label: "Wi-Fi Калуга", href: "https://t.me/WifiFreeMap_bot" },
+                    { label: "Канал Openweb40", href: "https://t.me/openweb40ru" },
+                    { label: "Полезные боты", href: "https://t.me/usefulbots2026_bot" },
                   ].map((s) => (
                     <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                       className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-white/25 text-sm text-muted-foreground hover:text-foreground transition-all"
@@ -161,6 +164,25 @@ export default function ContactsPage() {
                   </div>
                 </>
               )}
+            </div>
+          </div>
+
+          <div className="text-center p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-primary/15 to-accent/10 border border-primary/20 mb-16">
+            <h2 className="text-xl font-bold text-foreground mb-2">Не знаете что выбрать?</h2>
+            <p className="text-muted-foreground text-sm mb-6 max-w-xl mx-auto">
+              Наш специалист бесплатно приедет, оценит условия и предложит оптимальное решение именно для вашего случая.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/">
+                <Button size="sm" className="h-11 px-8 bg-primary hover:bg-primary/90 text-white shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+                  Бесплатный выезд
+                </Button>
+              </Link>
+              <a href="tel:+79105954668">
+                <Button size="sm" variant="outline" className="h-11 px-8 border-white/20 bg-white/5 hover:bg-white/10 text-white">
+                  +7 (910) 595-46-68
+                </Button>
+              </a>
             </div>
           </div>
 

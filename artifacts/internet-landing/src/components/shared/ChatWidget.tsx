@@ -18,7 +18,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<ChatMsg[]>([
     {
       role: "assistant",
-      text: "Привет! Я AI-помощник Openweb40.ru. Задайте любой вопрос об интернете для загородного дома — отвечу сразу.",
+      text: "Привет! Я ваш интеллектуальный консультант Openweb40.ru. Задайте любой вопрос об интернете для загородного дома — отвечу сразу.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -126,6 +126,14 @@ export default function ChatWidget() {
 
   return (
     <>
+      {/* Backdrop blur overlay when open */}
+      {open && (
+        <div 
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-all duration-500"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
       {/* Floating button */}
       <button
         onClick={() => setOpen((v) => !v)}
@@ -145,8 +153,8 @@ export default function ChatWidget() {
       {/* Chat panel */}
       {open && (
         <div
-          className="fixed bottom-24 right-6 z-50 w-80 md:w-96 rounded-2xl bg-background/95 backdrop-blur-3xl border border-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.8),0_0_20px_rgba(139,92,246,0.3)] overflow-hidden flex flex-col transition-all duration-300 ring-1 ring-white/10"
-          style={{ maxHeight: "540px" }}
+          className="fixed bottom-24 right-6 z-50 w-[calc(100vw-3rem)] sm:w-96 rounded-2xl bg-background/95 backdrop-blur-3xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,1),0_0_30px_rgba(139,92,246,0.4)] overflow-hidden flex flex-col transition-all duration-300 ring-1 ring-white/20"
+          style={{ maxHeight: "600px" }}
         >
           {/* Header */}
           <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-primary/20 to-accent/20 border-b border-white/10">
@@ -154,7 +162,7 @@ export default function ChatWidget() {
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div className="flex-1">
-              <p className="font-semibold text-foreground text-sm">AI-помощник Openweb40</p>
+              <p className="font-semibold text-foreground text-sm">Интеллектуальный консультант</p>
               <p className="text-xs text-green-400 flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block animate-pulse" />
                 {loading ? "Думает..." : "Онлайн · Работает на AI"}

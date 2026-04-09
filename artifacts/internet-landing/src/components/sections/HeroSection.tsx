@@ -32,7 +32,7 @@ export default function HeroSection() {
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full neon-badge w-fit mb-4 sm:mb-8">
             <span className="flex h-2 w-2 rounded-full bg-accent animate-pulse shadow-[0_0_6px_rgba(139,92,246,0.8)]" />
             <span className="text-sm font-medium text-white/90">
-              Работаем по Калуге и области — 24/7
+              Работаем по Калуге и области 24/7
             </span>
           </div>
 
