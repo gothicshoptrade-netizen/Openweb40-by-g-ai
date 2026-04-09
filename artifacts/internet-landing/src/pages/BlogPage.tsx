@@ -4,6 +4,7 @@ import Footer from "@/components/shared/Footer";
 import { Link } from "wouter";
 import { ArrowRight, Clock, Tag, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { motion, AnimatePresence } from "motion/react";
 
 const allTags = ["Все", "4G", "Wi-Fi", "спутник", "оборудование", "советы", "сравнение", "безопасность"];
 
@@ -14,7 +15,7 @@ const articles = [
     excerpt: "Разбираем ключевые параметры: усиление антенны, диапазоны частот, внешние и внутренние модемы. Что реально работает в Калужской области.",
     date: "1 апреля 2026", readTime: "7 мин",
     tags: ["4G", "оборудование"],
-    gradient: "from-primary/25 to-blue-500/15", featured: true,
+    image: "https://picsum.photos/seed/antenna/800/600", featured: true,
   },
   {
     id: 2, slug: "wifi-pokrytie-bolshoy-dom",
@@ -22,7 +23,7 @@ const articles = [
     excerpt: "Mesh-системы, точки доступа, powerline-адаптеры — сравниваем решения и даём конкретные рекомендации для загородных домов.",
     date: "25 марта 2026", readTime: "5 мин",
     tags: ["Wi-Fi", "советы"],
-    gradient: "from-accent/25 to-purple-500/15", featured: false,
+    image: "https://picsum.photos/seed/wifi/800/600", featured: false,
   },
   {
     id: 3, slug: "sputnikoviy-internet-vs-4g",
@@ -30,7 +31,7 @@ const articles = [
     excerpt: "Сравниваем Starlink, OneWeb и операторов сотовой связи. Реальные данные скоростей в отдалённых районах Калужской области.",
     date: "18 марта 2026", readTime: "9 мин",
     tags: ["спутник", "4G", "сравнение"],
-    gradient: "from-primary/20 to-blue-400/10", featured: false,
+    image: "https://picsum.photos/seed/satellite/800/600", featured: false,
   },
   {
     id: 4, slug: "vpn-zagorodnyj-dom",
@@ -38,7 +39,7 @@ const articles = [
     excerpt: "VPN для безопасности, обхода блокировок, удалённой работы и умного дома. Когда стоит подключать, а когда нет.",
     date: "10 марта 2026", readTime: "6 мин",
     tags: ["безопасность", "советы"],
-    gradient: "from-accent/20 to-purple-400/10", featured: false,
+    image: "https://picsum.photos/seed/vpn/800/600", featured: false,
   },
   {
     id: 5, slug: "routery-dlya-dachy",
@@ -46,7 +47,7 @@ const articles = [
     excerpt: "TP-Link, Keenetic, Mikrotik — какой выбрать? Составили честный рейтинг с реальными тестами в условиях загородного дома.",
     date: "3 марта 2026", readTime: "8 мин",
     tags: ["оборудование", "Wi-Fi", "сравнение"],
-    gradient: "from-pink-400/20 to-rose-400/10", featured: false,
+    image: "https://picsum.photos/seed/router/800/600", featured: false,
   },
   {
     id: 6, slug: "umnyj-dom-internet",
@@ -54,7 +55,7 @@ const articles = [
     excerpt: "Как правильно организовать сеть для устройств умного дома: IoT-сегментация, резервирование, скорость. Практические советы.",
     date: "24 февраля 2026", readTime: "7 мин",
     tags: ["советы", "безопасность"],
-    gradient: "from-cyan-400/20 to-blue-400/10", featured: false,
+    image: "https://picsum.photos/seed/smarthome/800/600", featured: false,
   },
 ];
 
@@ -78,10 +79,7 @@ export default function BlogPage() {
       <main className="pt-28 pb-24">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
-              <span className="text-sm font-medium text-muted-foreground">Блог Openweb40.ru</span>
-            </div>
-            <h1 className="text-5xl font-extrabold text-foreground mb-6">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">
               Статьи и советы об интернете{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">для загородной жизни</span>
             </h1>
@@ -109,7 +107,7 @@ export default function BlogPage() {
             {allTags.map((tag) => (
               <button key={tag} onClick={() => setActiveTag(tag)}
                 className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-                  activeTag === tag ? "bg-primary text-white" : "bg-card border border-white/10 text-muted-foreground hover:border-white/25"
+                  activeTag === tag ? "bg-primary text-white shadow-[0_0_15px_rgba(59,130,246,0.4)]" : "bg-card border border-white/10 text-muted-foreground hover:border-white/25"
                 }`}
                 data-testid={`btn-tag-${tag}`}>
                 {tag !== "Все" && <Tag className="w-3.5 h-3.5" />}
@@ -120,13 +118,25 @@ export default function BlogPage() {
 
           {/* Featured */}
           {featured && (
-            <div className="mb-12 rounded-2xl bg-card border border-white/10 overflow-hidden hover:border-primary/30 transition-colors group" data-testid="card-featured-article">
-              <div className={`h-56 bg-gradient-to-br ${featured.gradient} relative flex items-end p-8`}>
-                <div className="absolute inset-0 bg-grid-white opacity-10" />
-                <div className="relative z-10">
+            <motion.div
+              layout
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-12 rounded-2xl bg-card border border-white/10 overflow-hidden hover:border-primary/30 transition-colors group"
+              data-testid="card-featured-article"
+            >
+              <div className="h-64 relative overflow-hidden">
+                <img
+                  src={featured.image}
+                  alt={featured.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-8 relative z-10">
                   <span className="px-3 py-1 rounded-full bg-primary text-white text-xs font-bold mr-2">Главная</span>
                   {featured.tags.map((t) => (
-                    <span key={t} className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-xs font-medium mr-2">{t}</span>
+                    <span key={t} className="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white/90 text-xs font-medium mr-2 border border-white/10">{t}</span>
                   ))}
                 </div>
               </div>
@@ -141,35 +151,51 @@ export default function BlogPage() {
                   Читать статью <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           )}
 
           {/* Rest */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {rest.map((article, i) => (
-              <article key={article.id} className="rounded-2xl bg-card border border-white/10 overflow-hidden hover:border-white/25 group transition-all" data-testid={`card-article-${i}`}>
-                <div className={`h-36 bg-gradient-to-br ${article.gradient} relative`}>
-                  <div className="absolute inset-0 bg-grid-white opacity-10" />
-                  <div className="absolute bottom-3 left-4 flex gap-2">
-                    {article.tags.map((t) => (
-                      <span key={t} className="px-2 py-0.5 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-xs">{t}</span>
-                    ))}
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <AnimatePresence mode="popLayout">
+              {rest.map((article, i) => (
+                <motion.article
+                  key={article.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="rounded-2xl bg-card border border-white/10 overflow-hidden hover:border-white/25 group transition-all hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]"
+                  data-testid={`card-article-${i}`}
+                >
+                  <div className="h-44 relative overflow-hidden">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 flex gap-2">
+                      {article.tags.map((t) => (
+                        <span key={t} className="px-2 py-0.5 rounded-full bg-black/50 backdrop-blur-md text-white/90 text-[10px] border border-white/10">{t}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                    <span>{article.date}</span>
-                    <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{article.readTime}</span>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
+                      <span>{article.date}</span>
+                      <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{article.readTime}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2">{article.title}</h3>
+                    <p className="text-muted-foreground text-sm mb-5 leading-relaxed line-clamp-2">{article.excerpt}</p>
+                    <Link href={`/blog/${article.slug}`} className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:gap-3 transition-all" data-testid={`link-article-${i}`}>
+                      Читать <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-tight">{article.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-5 leading-relaxed">{article.excerpt}</p>
-                  <Link href={`/blog/${article.slug}`} className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:gap-3 transition-all" data-testid={`link-article-${i}`}>
-                    Читать <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+                </motion.article>
+              ))}
+            </AnimatePresence>
+          </motion.div>
 
           {filtered.length === 0 && (
             <div className="text-center py-20 text-muted-foreground">

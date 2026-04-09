@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
+import { motion, AnimatePresence } from "motion/react";
 
 export default function CalculatorSection() {
   const [area, setArea] = useState(150);
@@ -142,41 +143,47 @@ export default function CalculatorSection() {
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between items-center py-2 border-b border-white/10">
                   <span className="text-muted-foreground text-sm">Базовое подключение</span>
-                  <span className="text-foreground font-medium">{basePrice.toLocaleString("ru-RU")} ₽</span>
+                  <span className="text-foreground font-medium whitespace-nowrap">{basePrice.toLocaleString("ru-RU")}&nbsp;₽</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-white/10">
                   <span className="text-muted-foreground text-sm">За площадь ({area} м²)</span>
-                  <span className="text-foreground font-medium">+{areaPrice.toLocaleString("ru-RU")} ₽</span>
+                  <span className="text-foreground font-medium whitespace-nowrap">+{areaPrice.toLocaleString("ru-RU")}&nbsp;₽</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-white/10">
                   <span className="text-muted-foreground text-sm">За устройства ({devices} шт)</span>
-                  <span className="text-foreground font-medium">+{devicePrice.toLocaleString("ru-RU")} ₽</span>
+                  <span className="text-foreground font-medium whitespace-nowrap">+{devicePrice.toLocaleString("ru-RU")}&nbsp;₽</span>
                 </div>
                 {needVpn && (
                   <div className="flex justify-between items-center py-2 border-b border-white/10">
                     <span className="text-muted-foreground text-sm">VPN сервис</span>
-                    <span className="text-foreground font-medium">+{vpnPrice.toLocaleString("ru-RU")} ₽</span>
+                    <span className="text-foreground font-medium whitespace-nowrap">+{vpnPrice.toLocaleString("ru-RU")}&nbsp;₽</span>
                   </div>
                 )}
                 <div className="flex justify-between items-center py-2 border-b border-white/10">
                   <span className="text-muted-foreground text-sm">Удалённость ({distance} км)</span>
-                  <span className="text-foreground font-medium">+{distancePrice.toLocaleString("ru-RU")} ₽</span>
+                  <span className="text-foreground font-medium whitespace-nowrap">+{distancePrice.toLocaleString("ru-RU")}&nbsp;₽</span>
                 </div>
               </div>
 
-              <div
-                key={totalPrice}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 mb-8 transition-all duration-300"
-              >
-                <p className="text-sm text-muted-foreground mb-1">Итого в месяц</p>
-                <div className="flex items-end gap-2">
-                  <span className="text-5xl font-extrabold text-foreground" data-testid="calc-total-price">
-                    {totalPrice.toLocaleString("ru-RU")}
-                  </span>
-                  <span className="text-2xl text-primary font-bold mb-1">₽</span>
-                </div>
-                <p className="text-xs text-muted-foreground mt-2">Точная стоимость — после выезда замерщика</p>
-              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={totalPrice}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="p-6 rounded-xl bg-white/5 border border-white/10 mb-8"
+                >
+                  <p className="text-sm text-muted-foreground mb-1">Итого в месяц</p>
+                  <div className="flex items-end gap-2">
+                    <span className="text-5xl font-extrabold text-foreground whitespace-nowrap" data-testid="calc-total-price">
+                      {totalPrice.toLocaleString("ru-RU")}
+                    </span>
+                    <span className="text-2xl text-primary font-bold mb-1">₽</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-2">Точная стоимость — после выезда замерщика скорости</p>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             <Button

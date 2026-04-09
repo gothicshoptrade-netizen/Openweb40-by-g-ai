@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { MapPin, Zap, Home, Building2, TreePine } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 type FilterType = "all" | "dacha" | "cottage" | "village";
 
@@ -92,10 +93,7 @@ export default function PortfolioPage() {
       <main className="pt-28 pb-24">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
-              <span className="text-sm font-medium text-accent">Наши работы</span>
-            </div>
-            <h1 className="text-5xl font-extrabold text-foreground mb-6">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">
               Портфолио проектов
             </h1>
             <p className="text-muted-foreground text-xl">
@@ -126,13 +124,22 @@ export default function PortfolioPage() {
           </div>
 
           {/* Projects grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((project, i) => (
-              <div
-                key={`${filter}-${i}`}
-                className="rounded-2xl bg-card border border-white/10 hover:border-white/25 overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]"
-                data-testid={`card-project-${i}`}
-              >
+          <motion.div
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <AnimatePresence mode="popLayout">
+              {filtered.map((project, i) => (
+                <motion.div
+                  key={project.title}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  className="rounded-2xl bg-card border border-white/10 hover:border-white/25 overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]"
+                  data-testid={`card-project-${i}`}
+                >
                 {/* Gradient image */}
                 <div className={`h-44 bg-gradient-to-br ${project.gradient} relative flex items-end p-5`}>
                   <div className="absolute inset-0 bg-grid-white opacity-10" />
@@ -176,9 +183,10 @@ export default function PortfolioPage() {
                     )}
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
 
           <div className="text-center mt-16 p-10 rounded-2xl bg-primary/10 border border-primary/20">
             <p className="text-2xl font-bold text-foreground mb-3">Ваш объект может стать следующим</p>

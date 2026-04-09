@@ -7,6 +7,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FaqSection from "@/components/sections/FaqSection";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 import BlogSection from "@/components/sections/BlogSection";
+import StatsSection from "@/components/sections/StatsSection";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 
@@ -18,9 +19,9 @@ export default function LandingPage() {
         <HeroSection />
 
         {/* Bento Grid Layout */}
-        <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-24 md:pt-32">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-24 md:pt-32 space-y-24 md:space-y-32">
           {/* Row 1: Problems + How We Work */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 mb-24 md:mb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24">
             <div className="lg:col-span-7 bento-card">
               <ProblemsSection />
             </div>
@@ -29,13 +30,16 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Row 2: Solutions - Full Width */}
-          <div className="mb-24 md:mb-32 bento-card">
-            <SolutionsSection />
+          {/* Row 2: Stats + Solutions */}
+          <div className="space-y-24 md:space-y-32">
+            <StatsSection />
+            <div className="bento-card">
+              <SolutionsSection />
+            </div>
           </div>
 
           {/* Row 3: Calculator + Testimonials */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 mb-24 md:mb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24">
             <div className="lg:col-span-5 bento-card">
               <CalculatorSection />
             </div>
@@ -45,12 +49,12 @@ export default function LandingPage() {
           </div>
 
           {/* Row 4: Blog */}
-          <div className="mb-24 md:mb-32 bento-card">
+          <div className="bento-card">
             <BlogSection />
           </div>
 
           {/* Row 5: FAQ + Contact */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 mb-32 md:mb-40">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 pb-32 md:pb-40">
             <div className="lg:col-span-6 bento-card">
               <FaqSection />
             </div>

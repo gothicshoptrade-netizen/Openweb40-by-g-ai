@@ -5,6 +5,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { motion } from "motion/react";
 
 // Map pins visualization for Kaluga region
 const mapPins = [
@@ -43,17 +44,18 @@ export default function ContactsPage() {
       <Header />
       <main className="pt-28 pb-24">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <span className="text-sm font-medium text-primary">Контакты Openweb40.ru</span>
-            </div>
-            <h1 className="text-5xl font-extrabold text-foreground mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-2xl mx-auto mb-16"
+          >
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">
               Свяжитесь с нами
             </h1>
             <p className="text-muted-foreground text-xl">
               Ответим на любой вопрос в течение 15 минут. Работаем без выходных.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Contact info */}
@@ -66,7 +68,14 @@ export default function ContactsPage() {
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
-                  <div key={i} className="flex items-start gap-4 p-6 rounded-2xl bg-card border border-white/10 hover:border-white/20 transition-colors" data-testid={`contact-info-${i}`}>
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-start gap-4 p-6 rounded-2xl bg-card border border-white/10 hover:border-white/20 transition-colors"
+                    data-testid={`contact-info-${i}`}
+                  >
                     <div className={`shrink-0 w-12 h-12 rounded-xl ${item.bg} flex items-center justify-center`}>
                       <Icon className={`w-6 h-6 ${item.color}`} />
                     </div>
@@ -76,7 +85,7 @@ export default function ContactsPage() {
                         <p key={li} className="text-muted-foreground text-sm">{line}</p>
                       ))}
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
 

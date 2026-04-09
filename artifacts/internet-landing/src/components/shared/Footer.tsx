@@ -71,6 +71,7 @@ export default function Footer() {
                   { label: "Telegram", href: "https://t.me/krisdev13" },
                   { label: "WhatsApp", href: "https://wa.me/79105954668" },
                   { label: "Messenger Max", href: "#" },
+                  { label: "Wi-Fi Калуга", href: "https://t.me/WifiFreeMap_bot" },
                   { label: "Канал Openweb40", href: "https://t.me/openweb40ru" },
                   { label: "Полезные боты", href: "https://t.me/usefulbots2026_bot" },
                 ].map((s) => (

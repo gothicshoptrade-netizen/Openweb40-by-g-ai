@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, PhoneCall } from "lucide-react";
+import { ArrowRight, PhoneCall, ShieldCheck } from "lucide-react";
+import { motion } from "motion/react";
 
 export default function HeroSection() {
   const scrollTo = (id: string) =>
@@ -21,7 +22,12 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-8 sm:pt-12 pb-10 sm:pb-16">
-        <div className="max-w-2xl">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-2xl"
+        >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full neon-badge w-fit mb-4 sm:mb-8">
             <span className="flex h-2 w-2 rounded-full bg-accent animate-pulse shadow-[0_0_6px_rgba(139,92,246,0.8)]" />
@@ -48,13 +54,13 @@ export default function HeroSection() {
           </p>
 
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-8 sm:mb-14">
+          <div className="flex flex-col sm:flex-row gap-3 mb-8 sm:mb-12">
             <Button
               size="lg"
               className="h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base font-semibold bg-accent hover:bg-accent/90 text-white border-0 shadow-[0_0_30px_rgba(139,92,246,0.55)] transition-all duration-300 hover:scale-105 rounded-xl"
               onClick={() => scrollTo("contact")}
             >
-              Бесплатный замер
+              Бесплатный замер скорости
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Button
@@ -67,25 +73,13 @@ export default function HeroSection() {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="flex flex-wrap gap-5 sm:gap-8">
-            {[
-              { value: "1000", suffix: "+", label: "решённых проблем" },
-              { value: "300", suffix: "+", label: "довольных клиентов" },
-              { value: "10", suffix: " лет", label: "опыта работы" },
-              { value: "15", suffix: "+", label: "районов области" },
-            ].map((stat, i) => (
-              <div key={i} className="flex flex-col">
-                <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                  {stat.value}{stat.suffix}
-                </span>
-                <span className="text-[10px] sm:text-xs text-white/50 uppercase tracking-widest mt-1">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+          <div className="flex items-center gap-3 text-white/60 text-sm sm:text-base">
+            <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+              <ShieldCheck className="w-5 h-5 text-accent" />
+            </div>
+            <p>Используем профессиональное измерительное оборудование</p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom gradient fade */}

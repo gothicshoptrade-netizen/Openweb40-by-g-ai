@@ -1,8 +1,9 @@
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
-import { CheckCircle2, Wifi, Radio, Satellite, Router, Shield, Zap } from "lucide-react";
+import { CheckCircle2, Wifi, Radio, Satellite, Router, Shield, Zap, Video, GraduationCap, Settings, Globe, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { motion } from "motion/react";
 
 const services = [
   {
@@ -17,10 +18,27 @@ const services = [
       "Внешние направленные антенны",
       "Работа в морозы до -40°C",
     ],
-    price: "от 2 990 ₽/мес",
+    price: "от 2 990 ₽",
     color: "text-primary",
     bg: "bg-primary/10",
     border: "border-primary/30",
+  },
+  {
+    icon: Video,
+    title: "Видеонаблюдение",
+    description:
+      "Профессиональный подбор оборудования и качественный монтаж систем видеонаблюдения для частных домов и участков.",
+    features: [
+      "Подбор IP и аналоговых камер",
+      "Удалённый доступ со смартфона",
+      "Запись в облако или на диск",
+      "Детекция движения и уведомления",
+      "Ночная съёмка высокой чёткости",
+    ],
+    price: "от 12 000 ₽",
+    color: "text-accent",
+    bg: "bg-accent/10",
+    border: "border-accent/30",
   },
   {
     icon: Satellite,
@@ -34,10 +52,10 @@ const services = [
       "Монтаж тарелки и оборудования",
       "Настройка и гарантия",
     ],
-    price: "от 4 990 ₽/мес",
-    color: "text-accent",
-    bg: "bg-accent/10",
-    border: "border-accent/30",
+    price: "от 4 990 ₽",
+    color: "text-primary",
+    bg: "bg-primary/10",
+    border: "border-primary/30",
   },
   {
     icon: Router,
@@ -51,10 +69,10 @@ const services = [
       "Гостевая сеть",
       "Родительский контроль",
     ],
-    price: "от 15 000 ₽ (монтаж)",
-    color: "text-primary",
-    bg: "bg-primary/10",
-    border: "border-primary/30",
+    price: "от 15 000 ₽",
+    color: "text-accent",
+    bg: "bg-accent/10",
+    border: "border-accent/30",
   },
   {
     icon: Shield,
@@ -68,10 +86,10 @@ const services = [
       "Шифрование трафика",
       "Мониторинг сети 24/7",
     ],
-    price: "от 500 ₽/мес",
-    color: "text-accent",
-    bg: "bg-accent/10",
-    border: "border-accent/30",
+    price: "от 500 ₽",
+    color: "text-primary",
+    bg: "bg-primary/10",
+    border: "border-primary/30",
   },
   {
     icon: Zap,
@@ -85,28 +103,29 @@ const services = [
       "Мониторинг и оповещения",
       "Ноль простоев",
     ],
-    price: "от 1 500 ₽/мес",
-    color: "text-primary",
-    bg: "bg-primary/10",
-    border: "border-primary/30",
+    price: "от 1 500 ₽",
+    color: "text-accent",
+    bg: "bg-accent/10",
+    border: "border-accent/30",
+  },
+];
+
+const educationSteps = [
+  {
+    icon: Settings,
+    title: "Настройка роутера",
+    desc: "Как самостоятельно настроить Wi-Fi, сменить пароль и оптимизировать каналы для лучшей скорости."
   },
   {
-    icon: Wifi,
-    title: "Техобслуживание",
-    description:
-      "Регулярное обслуживание, мониторинг и быстрое устранение неисправностей. Ваш интернет всегда работает.",
-    features: [
-      "Мониторинг 24/7",
-      "Выезд в течение 4 часов",
-      "Удалённая диагностика",
-      "Обновление прошивок",
-      "Плановые ТО",
-    ],
-    price: "включено в тариф",
-    color: "text-pink-400",
-    bg: "bg-pink-400/10",
-    border: "border-pink-400/30",
+    icon: Lock,
+    title: "VPN своими руками",
+    desc: "Пошаговое руководство по настройке безопасного доступа к ресурсам без сторонней помощи."
   },
+  {
+    icon: Globe,
+    title: "Прокси-серверы",
+    desc: "Разбираемся в типах прокси и их правильной конфигурации для ваших задач."
+  }
 ];
 
 export default function ServicesPage() {
@@ -116,13 +135,10 @@ export default function ServicesPage() {
       <main className="pt-28 pb-24">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <span className="text-sm font-medium text-primary">Услуги Openweb40.ru</span>
-            </div>
-            <h1 className="text-5xl font-extrabold text-foreground mb-6">
-              Полный спектр услуг{" "}
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">
+              Наши{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                для загородного интернета
+                профессиональные услуги
               </span>
             </h1>
             <p className="text-muted-foreground text-xl leading-relaxed">
@@ -130,12 +146,16 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
             {services.map((service, i) => {
               const Icon = service.icon;
               return (
-                <div
+                <motion.div
                   key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
                   className={`p-8 rounded-2xl bg-card border ${service.border} hover:shadow-lg transition-all duration-300`}
                   data-testid={`card-service-${i}`}
                 >
@@ -155,9 +175,35 @@ export default function ServicesPage() {
                   <div className="pt-4 border-t border-white/10">
                     <span className={`text-lg font-bold ${service.color}`}>{service.price}</span>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
+          </div>
+
+          {/* Education Section */}
+          <div className="mb-32">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
+                <GraduationCap className="w-4 h-4 text-accent" />
+                <span className="text-sm font-medium text-accent">Обучающий раздел</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Настройте сами и сэкономьте</h2>
+              <p className="text-muted-foreground">
+                Мы делимся знаниями, чтобы вы могли решать базовые задачи самостоятельно, не переплачивая специалистам.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {educationSteps.map((step, i) => (
+                <div key={i} className="p-8 rounded-2xl bg-white/3 border border-white/10 hover:border-accent/30 transition-colors group">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <step.icon className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="text-center p-12 rounded-2xl bg-gradient-to-br from-primary/15 to-accent/10 border border-primary/20">

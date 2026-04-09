@@ -64,7 +64,10 @@ export default function ContactFormSection() {
             Оставьте заявку
           </h2>
           <p className="text-muted-foreground text-sm">
-            Бесплатный выезд замерщика — 24 часа, без обязательств
+            Бесплатный выезд для замера скорости — 24 часа, без обязательств
+          </p>
+          <p className="text-white/50 text-xs mt-2">
+            Используем профессиональное измерительное оборудование
           </p>
         </div>
 
@@ -91,9 +94,9 @@ export default function ContactFormSection() {
             })}
 
             <div className="p-5 rounded-xl bg-accent/10 border border-accent/20">
-              <p className="text-sm font-semibold text-accent mb-2">Бесплатный выезд замерщика</p>
+              <p className="text-sm font-semibold text-accent mb-2">Бесплатный замер скорости</p>
               <p className="text-sm text-muted-foreground">
-                Мы приедем, оценим ситуацию, подберём оборудование и дадим точный расчёт. Без предоплаты.
+                Специалист приедет с профессиональным оборудованием, найдет лучшую точку приема и даст точный расчет.
               </p>
             </div>
           </div>
