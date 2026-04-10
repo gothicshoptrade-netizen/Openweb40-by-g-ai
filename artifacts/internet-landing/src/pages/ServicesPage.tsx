@@ -171,15 +171,36 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-4 border-t border-white/10">
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between">
                     <span className={`text-lg font-bold ${service.color}`}>{service.price}</span>
+                    <a href="tel:+79105954668">
+                      <motion.div
+                        animate={{
+                          scale: [1, 1.05, 1],
+                          boxShadow: [
+                            "0 0 0px rgba(59, 130, 246, 0)",
+                            "0 0 15px rgba(59, 130, 246, 0.4)",
+                            "0 0 0px rgba(59, 130, 246, 0)",
+                          ],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      >
+                        <Button size="sm" className="bg-primary hover:bg-primary/90 text-white text-xs px-4">
+                          Заказать
+                        </Button>
+                      </motion.div>
+                    </a>
                   </div>
                 </motion.div>
               );
             })}
           </div>
 
-          <div className="text-center p-8 sm:p-12 rounded-2xl bg-gradient-to-br from-primary/15 to-accent/10 border border-primary/20">
+          <div className="text-center p-8 sm:p-12 rounded-2xl bg-gradient-to-br from-primary/15 to-accent/10 border border-primary/20 mb-20">
             <h2 className="text-2xl font-bold text-foreground mb-3">Не знаете что выбрать?</h2>
             <p className="text-muted-foreground text-base mb-6 max-w-2xl mx-auto">
               Наш специалист бесплатно выедет на объект, оценит условия и предложит оптимальное решение именно для вашего случая.
@@ -192,25 +213,6 @@ export default function ServicesPage() {
               </Link>
               <a href="tel:+79105954668">
                 <Button size="lg" variant="outline" className="h-14 px-10 border-white/20 bg-white/5 hover:bg-white/10 text-white" data-testid="btn-services-phone">
-                  +7 (910) 595-46-68
-                </Button>
-              </a>
-            </div>
-          </div>
-
-          <div className="text-center p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-primary/15 to-accent/10 border border-primary/20 mb-20">
-            <h2 className="text-xl font-bold text-foreground mb-2">Не знаете что выбрать?</h2>
-            <p className="text-muted-foreground text-sm mb-6 max-w-xl mx-auto">
-              Наш специалист бесплатно приедет, оценит условия и предложит оптимальное решение именно для вашего случая.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/">
-                <Button size="sm" className="h-11 px-8 bg-primary hover:bg-primary/90 text-white shadow-[0_0_20px_rgba(59,130,246,0.4)]" data-testid="btn-services-cta">
-                  Бесплатный выезд
-                </Button>
-              </Link>
-              <a href="tel:+79105954668">
-                <Button size="sm" variant="outline" className="h-11 px-8 border-white/20 bg-white/5 hover:bg-white/10 text-white" data-testid="btn-services-phone">
                   +7 (910) 595-46-68
                 </Button>
               </a>
