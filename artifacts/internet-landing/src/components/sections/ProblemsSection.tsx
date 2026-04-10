@@ -59,21 +59,21 @@ function ProblemCard({ icon: Icon, title, description, index }: {
 
 export default function ProblemsSection() {
   return (
-    <section id="problems" className="p-4 sm:p-6 relative">
-      <div className="relative z-10">
-        <div className="text-center mb-6">
+    <section id="problems" className="py-8 sm:py-12 relative">
+      <div className="relative z-10 container mx-auto px-4">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full neon-badge mb-3">
-            <span className="text-[10px] font-medium text-accent">Знакомые проблемы?</span>
+            <span className="text-[10px] font-bold text-accent uppercase tracking-wider">Знакомые проблемы?</span>
           </div>
-          <h2 className="text-xl sm:text-3xl font-bold text-foreground mb-2">
+          <h2 className="text-2xl sm:text-4xl font-black text-foreground mb-3 tracking-tight">
             Вы не одиноки в борьбе с интернетом
           </h2>
-          <p className="text-muted-foreground text-xs sm:text-sm">
-            Тысячи жителей Калужской области сталкиваются с теми же трудностями каждый день
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto">
+            Тысячи жителей Калужской области сталкиваются с теми же трудностями каждый день. Мы знаем, как это исправить.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {problems.map((problem, index) => (
             <ProblemCard key={index} {...problem} index={index} />
           ))}

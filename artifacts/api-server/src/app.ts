@@ -38,10 +38,24 @@ app.use("/api", router);
 
 // Serve static files from the internet-landing artifact
 const publicPath = path.resolve(__dirname, "..", "..", "internet-landing", "dist", "public");
+logger.info({ publicPath }, "Serving static files from");
+
 app.use(express.static(publicPath));
 
+// Handle client-side routing - serve index.html for all non-API routes
 app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
+  if (req.path.startsWith("/api")) {
+    res.status(404).json({ error: "API route not found" });
+    return;
+  }
+  
+  const indexPath = path.join(publicPath, "index.html");
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      logger.error({ err, indexPath, url: req.url }, "Error sending index.html");
+      res.status(404).send("Frontend not found. Please ensure the build completed successfully.");
+    }
+  });
 });
 
 export default app;

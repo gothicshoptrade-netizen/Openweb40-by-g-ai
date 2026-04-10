@@ -74,6 +74,7 @@
     "zod": "catalog:"
   },
   "dependencies": {
+    "@google/genai": "^1.49.0",
     "lottie-react": "^2.4.1"
   }
 }
