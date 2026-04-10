@@ -60,7 +60,7 @@ export default function BlogSection() {
           </motion.div>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-foreground font-medium transition-all shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-foreground font-medium transition-all shrink-0 btn-pulse-primary"
             data-testid="link-all-articles"
           >
             Все статьи

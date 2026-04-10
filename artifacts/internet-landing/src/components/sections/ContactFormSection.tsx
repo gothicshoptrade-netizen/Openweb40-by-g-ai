@@ -166,7 +166,7 @@ export default function ContactFormSection() {
                       />
                     </div>
                     <Button
-                      className="w-full h-12 bg-accent hover:bg-accent/90 text-white shadow-[0_0_20px_rgba(139,92,246,0.4)] rounded-xl mt-4"
+                      className="w-full h-12 bg-accent hover:bg-accent/90 text-white shadow-[0_0_20px_rgba(139,92,246,0.4)] rounded-xl mt-4 btn-pulse"
                       disabled={!canProceedStep1}
                       onClick={() => setStep(2)}
                       data-testid="btn-step1-next"
@@ -234,7 +234,7 @@ export default function ContactFormSection() {
                         Назад
                       </Button>
                       <Button
-                        className="flex-1 h-12 bg-accent hover:bg-accent/90 text-white shadow-[0_0_20px_rgba(139,92,246,0.4)] rounded-xl"
+                        className="flex-1 h-12 bg-accent hover:bg-accent/90 text-white shadow-[0_0_20px_rgba(139,92,246,0.4)] rounded-xl btn-pulse"
                         disabled={!canProceedStep2}
                         onClick={() => setStep(3)}
                         data-testid="btn-step2-next"
@@ -274,7 +274,7 @@ export default function ContactFormSection() {
                         Назад
                       </Button>
                       <Button
-                        className="flex-1 h-12 bg-accent hover:bg-accent/90 text-white shadow-[0_0_25px_rgba(139,92,246,0.5)] rounded-xl"
+                        className="flex-1 h-12 bg-accent hover:bg-accent/90 text-white shadow-[0_0_25px_rgba(139,92,246,0.5)] rounded-xl btn-pulse"
                         disabled={!canProceedStep3 || isSubmitting}
                         onClick={handleSubmit}
                         data-testid="btn-submit-form"

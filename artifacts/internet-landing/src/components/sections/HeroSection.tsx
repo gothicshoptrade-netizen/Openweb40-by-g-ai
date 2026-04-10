@@ -12,7 +12,7 @@ export default function HeroSection() {
       {/* Background photo */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=1920"
+          src="https://allwebs.ru/images/2026/04/10/e36cc730a48dba001574889717954cad.jpg"
           alt="Загородный дом с установленным интернетом в Калужской области"
           className="w-full h-full object-cover opacity-60"
           onError={(e) => {
@@ -60,7 +60,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-3 mb-8 sm:mb-12">
             <Button
               size="lg"
-              className="h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base font-semibold bg-accent hover:bg-accent/90 text-white border-0 shadow-[0_0_30px_rgba(139,92,246,0.55)] transition-all duration-300 hover:scale-105 rounded-xl"
+              className="h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base font-semibold bg-accent hover:bg-accent/90 text-white border-0 shadow-[0_0_30px_rgba(139,92,246,0.55)] transition-all duration-300 hover:scale-105 rounded-xl btn-pulse"
               onClick={() => scrollTo("contact")}
             >
               Бесплатный замер скорости
@@ -69,7 +69,7 @@ export default function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base font-medium glass-card border-white/15 text-white hover:border-accent/40 transition-all duration-300 hover:scale-105 rounded-xl"
+              className="h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base font-medium glass-card border-white/15 text-white hover:border-accent/40 transition-all duration-300 hover:scale-105 rounded-xl btn-pulse-primary"
               onClick={() => scrollTo("calculator")}
             >
               Рассчитать стоимость

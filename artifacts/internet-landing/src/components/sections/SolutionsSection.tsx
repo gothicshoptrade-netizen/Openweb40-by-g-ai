@@ -177,7 +177,7 @@ export default function SolutionsSection() {
                     </ul>
 
                     <Button
-                      className={`w-full h-12 font-semibold rounded-xl ${
+                      className={`w-full h-12 font-semibold rounded-xl btn-pulse ${
                         pkg.popular
                           ? "bg-accent hover:bg-accent/90 text-white shadow-[0_0_20px_rgba(139,92,246,0.4)]"
                           : "bg-white/5 hover:bg-white/10 text-foreground border border-white/10"
@@ -245,7 +245,7 @@ export default function SolutionsSection() {
                     {packages.map((pkg, i) => (
                       <td key={i} className={`p-5 ${pkg.popular ? "bg-primary/5" : ""}`}>
                         <Button
-                          className={`w-full h-10 font-semibold ${
+                          className={`w-full h-10 font-semibold btn-pulse-primary ${
                             pkg.popular
                               ? "bg-primary hover:bg-primary/90 text-white"
                               : "bg-white/5 hover:bg-white/10 border border-white/10 text-foreground"

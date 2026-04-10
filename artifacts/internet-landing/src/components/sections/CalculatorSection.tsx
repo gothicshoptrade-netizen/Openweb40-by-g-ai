@@ -188,7 +188,7 @@ export default function CalculatorSection() {
 
             <Button
               size="lg"
-              className="w-full h-auto min-h-14 py-4 px-5 text-base font-semibold bg-accent hover:bg-accent/90 text-white shadow-[0_0_25px_rgba(139,92,246,0.5)] rounded-xl leading-snug whitespace-normal text-center"
+              className="w-full h-auto min-h-14 py-4 px-5 text-base font-semibold bg-accent hover:bg-accent/90 text-white shadow-[0_0_25px_rgba(139,92,246,0.5)] rounded-xl leading-snug whitespace-normal text-center btn-pulse"
               onClick={() => scrollTo("contact")}
               data-testid="btn-calculator-cta"
             >
