@@ -27,7 +27,7 @@ export default function NetworkArchitectureSection() {
                 <span className="gradient-text">и зависаний.</span>
               </h2>
               
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 text-justify">
                 Настраиваем связь, которая работает. Проводим интернет и создаем персональную архитектуру вашей домашней сети. 
                 Благодаря тонкой настройке (на уровне роутера) приватных протоколов связи, вы получаете стабильный доступ к любым ресурсам. 
                 Забудьте о постоянно отваливающихся приложениях — один раз настроил, и всё работает на всех ваших устройствах без потери скорости.
@@ -58,9 +58,9 @@ export default function NetworkArchitectureSection() {
             <div className="lg:col-span-5 relative">
               <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 group-hover:border-accent/30 transition-colors duration-500">
                 <img 
-                  src="https://picsum.photos/seed/network/800/800" 
+                  src="https://i.postimg.cc/wBTtJ3TY/IMG-20260412-154019-836.jpg" 
                   alt="Network Architecture"
-                  className="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                 
