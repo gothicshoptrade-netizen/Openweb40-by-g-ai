@@ -75,10 +75,25 @@ function VideoPreview({ thumb }: { thumb: string }) {
 }
 
 function MapVisualization() {
+  // Yandex Map points format: lon,lat,style
+  const points = [
+    "36.249674,54.513845,pm2rdl", // Калуга
+    "36.5953,55.1033,pm2rdl",    // Обнинск
+    "36.4633,55.0114,pm2rdl",    // Малоярославец
+    "36.7472,55.0031,pm2rdl",    // Жуков
+    "37.1789,54.7289,pm2rdl",    // Таруса
+    "35.9311,54.8056,pm2rdl",    // Кондрово
+    "35.7833,54.0333,pm2rdl",    // Козельск
+    "34.45,53.8667,pm2rdl",      // Людиново
+    "34.3,54.0667,pm2rdl",       // Киров
+    "35.8667,54.9667,pm2rdl",    // Медынь
+    "36.4833,55.2167,pm2rdl"     // Боровск
+  ].join("~");
+
   return (
-    <div className="relative w-full rounded-2xl overflow-hidden border border-white/10" style={{ height: "280px" }}>
+    <div className="relative w-full rounded-2xl overflow-hidden border border-white/10" style={{ height: "320px" }}>
       <iframe
-        src="https://yandex.ru/map-widget/v1/?ll=36.249674%2C54.513845&z=8&l=map&pt=36.249674,54.513845,pm2rdl~35.977699,54.739368,pm2rdl~37.340926,55.005268,pm2rdl~37.004595,54.734051,pm2rdl~36.038699,54.355432,pm2rdl~35.783836,54.030649,pm2rdl"
+        src={`https://yandex.ru/map-widget/v1/?l=map&pt=${points}&z=8`}
         title="Зона покрытия Openweb40.ru — Калужская область"
         width="100%"
         height="100%"

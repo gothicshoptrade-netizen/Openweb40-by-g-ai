@@ -20,11 +20,11 @@ export default function Footer() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <footer className="bg-background/80 backdrop-blur-xl border-t border-accent/15 pt-16 pb-8 mt-8">
+    <footer className="bg-background/80 backdrop-blur-xl border-t border-accent/15 pt-16 pb-8 mt-8 text-center">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 flex flex-col items-center lg:items-center">
             <Link href="/" className="flex items-center gap-0 group shrink-0 mb-5">
               <span className="font-mono font-black tracking-tight leading-none select-none">
                 <span className="text-xl sm:text-2xl text-white/95 group-hover:text-white transition-colors">OPEN</span>
@@ -32,7 +32,7 @@ export default function Footer() {
                 <span className="text-sm sm:text-lg text-white/35 group-hover:text-white/50 transition-colors">.ru</span>
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-md">
               Надёжный и быстрый интернет для вашего загородного дома. Решаем проблемы со связью там, где другие сдаются.
             </p>
             <a href="tel:+79105954668" className="inline-flex items-center gap-2 text-white font-semibold hover:text-primary transition-colors whitespace-nowrap" data-testid="link-footer-phone">
@@ -42,31 +42,31 @@ export default function Footer() {
           </div>
 
           {/* Contacts */}
-          <div>
+          <div className="flex flex-col items-center">
             <h3 className="text-base font-semibold text-white mb-6">Контакты</h3>
             <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-muted-foreground text-sm">
+              <li className="flex items-center gap-3 text-muted-foreground text-sm justify-center">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
                 <a href="tel:+79105954668" className="hover:text-white transition-colors">+7 (910) 595-46-68</a>
               </li>
-              <li className="flex items-center gap-3 text-muted-foreground text-sm">
+              <li className="flex items-center gap-3 text-muted-foreground text-sm justify-center">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 <a href="mailto:info@openweb40.ru" className="hover:text-white transition-colors">info@openweb40.ru</a>
               </li>
-              <li className="flex items-start gap-3 text-muted-foreground text-sm">
+              <li className="flex items-start gap-3 text-muted-foreground text-sm justify-center">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span>г. Калуга, ул. Кирова, д. 1, офис 101</span>
+                <span>г. Калуга</span>
               </li>
-              <li className="flex items-start gap-3 text-muted-foreground text-sm">
+              <li className="flex items-start gap-3 text-muted-foreground text-sm justify-center">
                 <Clock className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                 <span>Пн–Вс: 9:00–21:00 / Техподдержка 24/7</span>
               </li>
             </ul>
 
             {/* Messengers */}
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col items-center">
               <p className="text-sm text-muted-foreground mb-3">Мессенджеры и каналы:</p>
-              <div className="flex gap-2 flex-wrap">
+              <div className="flex gap-2 flex-wrap justify-center">
                 {[
                   { label: "Telegram", href: "https://t.me/krisdev13" },
                   { label: "WhatsApp", href: "https://wa.me/79105954668" },
@@ -91,15 +91,26 @@ export default function Footer() {
           </div>
 
           {/* Menu */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 flex flex-col items-center">
             <h3 className="text-base font-semibold text-white mb-6">Меню</h3>
             <div className="grid grid-cols-2 gap-x-8 gap-y-3">
-              {[...pages, ...anchors.map(a => ({ href: `/#${a.id}`, label: a.label }))].map((item) => (
-                <a
+              {pages.map((item) => (
+                <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors text-sm group"
+                  className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors text-sm group justify-center cursor-pointer"
                   data-testid={`footer-link-${item.href.replace(/[^a-z0-9]/g, '-')}`}
+                >
+                  <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform shrink-0" />
+                  <span className="truncate">{item.label}</span>
+                </Link>
+              ))}
+              {anchors.map((item) => (
+                <a
+                  key={item.id}
+                  href={`/#${item.id}`}
+                  className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors text-sm group justify-center cursor-pointer"
+                  data-testid={`footer-link-${item.id}`}
                 >
                   <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform shrink-0" />
                   <span className="truncate">{item.label}</span>
@@ -109,8 +120,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col gap-2">
+        <div className="pt-8 border-t border-white/10 flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col gap-2 items-center">
             <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} Openweb40.ru. Все права защищены.
             </p>
@@ -118,7 +129,7 @@ export default function Footer() {
               Разработка и техподдержка: <a href="https://premiumwebsite.ru" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">premiumwebsite.ru</a>
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm text-muted-foreground items-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm text-muted-foreground items-center justify-center">
             <a href="/privacy" className="hover:text-white transition-colors text-center">Политика конфиденциальности</a>
             <div className="hidden sm:block w-px h-4 bg-white/10" />
             <a href="/data-processing" className="hover:text-white transition-colors text-center">Политика обработки данных</a>
