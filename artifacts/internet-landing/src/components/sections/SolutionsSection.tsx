@@ -13,6 +13,10 @@ const features = [
   "Гарантия",
   "VPN",
   "Персональный менеджер",
+  "Роутер",
+  "Антенна",
+  "Модем",
+  "Сим карта",
 ];
 
 const packages = [
@@ -31,6 +35,10 @@ const packages = [
       "1 год",
       false,
       false,
+      true,
+      true,
+      true,
+      true,
     ],
   },
   {
@@ -48,6 +56,10 @@ const packages = [
       "2 года",
       true,
       false,
+      true,
+      true,
+      true,
+      true,
     ],
   },
   {
@@ -63,6 +75,10 @@ const packages = [
       "не ограничено",
       "в день обращения",
       "3 года",
+      true,
+      true,
+      true,
+      true,
       true,
       true,
     ],
