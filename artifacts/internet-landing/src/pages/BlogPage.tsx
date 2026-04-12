@@ -39,7 +39,7 @@ const articles = [
     excerpt: "VPN для безопасности, обхода блокировок, удалённой работы и умного дома. Когда стоит подключать, а когда нет.",
     date: "10 марта 2026", readTime: "6 мин",
     tags: ["безопасность", "советы"],
-    image: "https://pollinations.ai/p/cybersecurity%20and%20vpn%20concept%20for%20a%20smart%20home%20network?width=800&height=600&seed=4&model=flux", featured: false,
+    image: "https://allwebs.ru/images/2026/04/12/c27e866d5b18212a509ecb46ed983f73.jpg", featured: false,
   },
   {
     id: 5, slug: "routery-dlya-dachy",
@@ -47,7 +47,7 @@ const articles = [
     excerpt: "TP-Link, Keenetic, Mikrotik — какой выбрать? Составили честный рейтинг с реальными тестами в условиях загородного дома.",
     date: "3 марта 2026", readTime: "8 мин",
     tags: ["оборудование", "Wi-Fi", "сравнение"],
-    image: "https://pollinations.ai/p/modern%20high-tech%20wifi%20router%20on%20a%20wooden%20table%20in%20a%20country%20house?width=800&height=600&seed=5&model=flux", featured: false,
+    image: "https://allwebs.ru/images/2026/04/12/f7f0a5303811be2e9cb323e6b3498d53.jpg", featured: false,
   },
   {
     id: 6, slug: "umnyj-dom-internet",
@@ -55,7 +55,7 @@ const articles = [
     excerpt: "Как правильно организовать сеть для устройств умного дома: IoT-сегментация, резервирование, скорость. Практические советы.",
     date: "24 февраля 2026", readTime: "7 мин",
     tags: ["советы", "безопасность"],
-    image: "https://pollinations.ai/p/smart%20home%20automation%20devices%20connected%20to%20a%20central%20hub?width=800&height=600&seed=6&model=flux", featured: false,
+    image: "https://allwebs.ru/images/2026/04/12/c6c809e4963f4a7926f62e5b306b86c2.jpg", featured: false,
   },
 ];
 

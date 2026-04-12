@@ -163,22 +163,22 @@ export default function PortfolioPage() {
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-foreground mb-2">{project.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-5">{project.description}</p>
-                  <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/10">
+                  <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-white/10">
                     <div className="text-center">
-                      <div className="flex items-center justify-center gap-1 text-primary font-bold">
-                        <Zap className="w-4 h-4" />
-                        {project.speed}
+                      <div className="flex items-center justify-center gap-1 text-primary font-bold text-xs sm:text-sm md:text-base">
+                        <Zap className="w-3 h-3 sm:w-4 h-4 shrink-0" />
+                        <span className="whitespace-nowrap">{project.speed}</span>
                       </div>
-                      <div className="text-xs text-muted-foreground mt-0.5">скорость</div>
+                      <div className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">скорость</div>
                     </div>
                     <div className="text-center">
-                      <div className="font-bold text-foreground">{project.devices}</div>
-                      <div className="text-xs text-muted-foreground mt-0.5">устройств</div>
+                      <div className="font-bold text-foreground text-xs sm:text-sm md:text-base">{project.devices}</div>
+                      <div className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">устройств</div>
                     </div>
                     {project.area > 0 && (
                       <div className="text-center">
-                        <div className="font-bold text-foreground">{project.area} м²</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">покрытие</div>
+                        <div className="font-bold text-foreground text-xs sm:text-sm md:text-base">{project.area} м²</div>
+                        <div className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">покрытие</div>
                       </div>
                     )}
                   </div>
@@ -188,10 +188,10 @@ export default function PortfolioPage() {
             </AnimatePresence>
           </motion.div>
 
-          <div className="text-center mt-16 p-10 rounded-2xl bg-primary/10 border border-primary/20">
-            <p className="text-2xl font-bold text-foreground mb-3">Ваш объект может стать следующим</p>
-            <p className="text-muted-foreground mb-8">Оставьте заявку — разберёмся с любой сложностью</p>
-            <a href="tel:+79105954668" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-colors shadow-[0_0_25px_rgba(59,130,246,0.5)] whitespace-nowrap" data-testid="btn-portfolio-cta">
+          <div className="text-center mt-16 p-6 sm:p-10 rounded-3xl bg-primary/10 border border-primary/20">
+            <p className="text-xl sm:text-2xl font-bold text-foreground mb-3">Ваш объект может стать следующим</p>
+            <p className="text-muted-foreground text-sm sm:text-base mb-8">Оставьте заявку — разберёмся с любой сложностью</p>
+            <a href="tel:+79105954668" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-primary text-white font-bold text-sm sm:text-lg hover:bg-primary/90 transition-colors shadow-[0_0_25px_rgba(59,130,246,0.5)] w-full sm:w-auto" data-testid="btn-portfolio-cta">
               Позвонить: +7 (910) 595-46-68
             </a>
           </div>

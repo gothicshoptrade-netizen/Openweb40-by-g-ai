@@ -27,7 +27,7 @@ export default function NetworkArchitectureSection() {
                 <span className="gradient-text">и зависаний.</span>
               </h2>
               
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 text-justify">
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 text-left">
                 Настраиваем связь, которая работает. Проводим интернет и создаем персональную архитектуру вашей домашней сети. 
                 Благодаря тонкой настройке (на уровне роутера) приватных протоколов связи, вы получаете стабильный доступ к любым ресурсам. 
                 Забудьте о постоянно отваливающихся приложениях — один раз настроил, и всё работает на всех ваших устройствах без потери скорости.

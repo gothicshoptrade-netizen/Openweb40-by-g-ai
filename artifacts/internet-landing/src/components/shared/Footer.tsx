@@ -91,22 +91,21 @@ export default function Footer() {
           </div>
 
           {/* Menu */}
-          <div>
+          <div className="lg:col-span-1">
             <h3 className="text-base font-semibold text-white mb-6">Меню</h3>
-            <ul className="space-y-3">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-3">
               {[...pages, ...anchors.map(a => ({ href: `/#${a.id}`, label: a.label }))].map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors text-sm group"
-                    data-testid={`footer-link-${item.href.replace(/[^a-z0-9]/g, '-')}`}
-                  >
-                    <ArrowRight className="w-3.5 h-3.5 text-primary group-hover:translate-x-1 transition-transform" />
-                    {item.label}
-                  </a>
-                </li>
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors text-sm group"
+                  data-testid={`footer-link-${item.href.replace(/[^a-z0-9]/g, '-')}`}
+                >
+                  <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-transform shrink-0" />
+                  <span className="truncate">{item.label}</span>
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
 
