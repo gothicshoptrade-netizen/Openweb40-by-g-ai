@@ -15,7 +15,7 @@ const articles = [
     excerpt: "Разбираем ключевые параметры: усиление антенны, диапазоны частот, внешние и внутренние модемы. Что реально работает в Калужской области.",
     date: "1 апреля 2026", readTime: "7 мин",
     tags: ["4G", "оборудование"],
-    image: "https://pollinations.ai/p/4G%20internet%20antenna%20on%20a%20country%20house%20roof%20modern%20tech?width=800&height=600&seed=1&model=flux", featured: true,
+    image: "https://allwebs.ru/images/2026/04/12/765f42ac7983b23fc6f99aa3b625671d.jpg", featured: true,
   },
   {
     id: 2, slug: "wifi-pokrytie-bolshoy-dom",
@@ -23,7 +23,7 @@ const articles = [
     excerpt: "Mesh-системы, точки доступа, powerline-адаптеры — сравниваем решения и даём конкретные рекомендации для загородных домов.",
     date: "25 марта 2026", readTime: "5 мин",
     tags: ["Wi-Fi", "советы"],
-    image: "https://pollinations.ai/p/mesh%20wifi%20system%20in%20a%20large%20modern%20luxury%20house%20interior?width=800&height=600&seed=2&model=flux", featured: false,
+    image: "https://allwebs.ru/images/2026/04/12/2abbb8b6ff61709d78e4ca132b99b2c4.jpg", featured: false,
   },
   {
     id: 3, slug: "sputnikoviy-internet-vs-4g",
@@ -31,7 +31,7 @@ const articles = [
     excerpt: "Сравниваем Starlink, OneWeb и операторов сотовой связи. Реальные данные скоростей в отдалённых районах Калужской области.",
     date: "18 марта 2026", readTime: "9 мин",
     tags: ["спутник", "4G", "сравнение"],
-    image: "https://pollinations.ai/p/satellite%20dish%20and%204G%20antenna%20comparison%20on%20a%20rural%20house?width=800&height=600&seed=3&model=flux", featured: false,
+    image: "https://allwebs.ru/images/2026/04/12/a70baa6a128e295bcbabc4d811429695.jpg", featured: false,
   },
   {
     id: 4, slug: "vpn-zagorodnyj-dom",
