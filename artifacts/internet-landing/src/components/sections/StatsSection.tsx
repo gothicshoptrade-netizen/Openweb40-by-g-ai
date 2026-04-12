@@ -22,7 +22,7 @@ export default function StatsSection() {
                 transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
                 className="flex flex-col items-center text-center group transition-all duration-500"
               >
-                <span className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-3 relative z-10 group-hover:scale-110 transition-transform duration-500">
+                <span className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-3 relative z-10 group-hover:scale-110 transition-transform duration-500">
                   {stat.value}<span className="text-primary">{stat.suffix}</span>
                 </span>
                 <span className="text-[10px] md:text-xs text-white/40 uppercase tracking-[0.2em] font-bold relative z-10 group-hover:text-white/60 transition-colors">

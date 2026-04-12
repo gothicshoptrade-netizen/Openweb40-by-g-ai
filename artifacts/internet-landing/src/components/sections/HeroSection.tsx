@@ -50,10 +50,14 @@ export default function HeroSection() {
             <span className="gradient-text">жизни.</span>
           </h1>
 
-          <p className="hero-desc text-base sm:text-xl text-white/70 leading-relaxed mb-6 sm:mb-10 max-w-lg">
+          <p className="hero-desc text-base sm:text-xl text-white/70 leading-relaxed mb-4 max-w-lg">
             Стабильная связь в любой точке Калужской области.
             Забудьте о «мёртвых зонах» и медленных загрузках —
             мы решаем это за 1–2 дня.
+          </p>
+
+          <p className="text-sm sm:text-base text-white/60 leading-relaxed mb-6 sm:mb-10 max-w-lg border-l-2 border-accent pl-4 italic">
+            Индивидуальные решения для бесперебойного доступа к глобальной сети. Персональные VPN-каналы, защита от замедления трафика и настройка оборудования под ключ.
           </p>
 
           {/* CTA */}

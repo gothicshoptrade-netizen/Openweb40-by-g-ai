@@ -191,7 +191,7 @@ export default function PortfolioPage() {
           <div className="text-center mt-16 p-10 rounded-2xl bg-primary/10 border border-primary/20">
             <p className="text-2xl font-bold text-foreground mb-3">Ваш объект может стать следующим</p>
             <p className="text-muted-foreground mb-8">Оставьте заявку — разберёмся с любой сложностью</p>
-            <a href="tel:+79105954668" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-colors shadow-[0_0_25px_rgba(59,130,246,0.5)]" data-testid="btn-portfolio-cta">
+            <a href="tel:+79105954668" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-colors shadow-[0_0_25px_rgba(59,130,246,0.5)] whitespace-nowrap" data-testid="btn-portfolio-cta">
               Позвонить: +7 (910) 595-46-68
             </a>
           </div>

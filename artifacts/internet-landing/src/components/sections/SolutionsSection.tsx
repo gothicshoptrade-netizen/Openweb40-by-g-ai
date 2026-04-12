@@ -12,7 +12,6 @@ const features = [
   "Срок установки",
   "Гарантия",
   "VPN",
-  "Персональный менеджер",
   "Роутер",
   "Антенна",
   "Модем",
@@ -22,7 +21,7 @@ const features = [
 const packages = [
   {
     name: "Стандарт",
-    price: "2 990",
+    price: "10 000",
     description: "Для небольших дачных домов и сезонного использования",
     color: "border-white/10",
     glowColor: "rgba(59,130,246,0.12)",
@@ -34,7 +33,6 @@ const packages = [
       "1–2 дня",
       "1 год",
       false,
-      false,
       true,
       true,
       true,
@@ -43,7 +41,7 @@ const packages = [
   },
   {
     name: "Оптимальный",
-    price: "4 990",
+    price: "20 000",
     description: "Идеальный выбор для постоянного проживания",
     color: "border-primary/50",
     glowColor: "rgba(59,130,246,0.25)",
@@ -55,7 +53,6 @@ const packages = [
       "1 день",
       "2 года",
       true,
-      false,
       true,
       true,
       true,
@@ -64,7 +61,7 @@ const packages = [
   },
   {
     name: "Максимум",
-    price: "7 990",
+    price: "30 000",
     description: "Профессиональное решение для больших домов и бизнеса",
     color: "border-accent/40",
     glowColor: "rgba(139,92,246,0.2)",
@@ -75,7 +72,6 @@ const packages = [
       "не ограничено",
       "в день обращения",
       "3 года",
-      true,
       true,
       true,
       true,

@@ -1,4 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
+import NetworkArchitectureSection from "@/components/sections/NetworkArchitectureSection";
 import ProblemsSection from "@/components/sections/ProblemsSection";
 import SolutionsSection from "@/components/sections/SolutionsSection";
 import HowWeWorkSection from "@/components/sections/HowWeWorkSection";
@@ -17,6 +18,10 @@ export default function LandingPage() {
       <Header />
       <main>
         <HeroSection />
+
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-12 md:pt-20">
+          <NetworkArchitectureSection />
+        </div>
 
         {/* Bento Grid Layout */}
         <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-24 md:pt-32 space-y-24 md:space-y-32">

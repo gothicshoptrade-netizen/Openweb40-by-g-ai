@@ -7,6 +7,23 @@ import { motion } from "motion/react";
 
 const services = [
   {
+    icon: Shield,
+    title: "Отказоустойчивые сети для дома и бизнеса",
+    description:
+      "Наша специализация — не просто прокладка кабеля, а создание умной маршрутизации трафика. Мы используем современные протоколы маскировки и индивидуальные настройки прокси/VPN, которые не подвержены массовым блокировкам и замедлениям. Вы получаете чистый, быстрый и безопасный интернет.",
+    features: [
+      "Умная маршрутизация трафика",
+      "Протоколы маскировки",
+      "Защита от блокировок",
+      "Индивидуальные настройки VPN",
+      "Безопасный доступ к ресурсам",
+    ],
+    price: "от 5 000 ₽",
+    color: "text-accent",
+    bg: "bg-accent/10",
+    border: "border-accent/30",
+  },
+  {
     icon: Radio,
     title: "4G/5G агрегация",
     description:
@@ -212,7 +229,7 @@ export default function ServicesPage() {
                 </Button>
               </Link>
               <a href="tel:+79105954668">
-                <Button size="lg" variant="outline" className="h-14 px-10 border-white/20 bg-white/5 hover:bg-white/10 text-white" data-testid="btn-services-phone">
+                <Button size="lg" variant="outline" className="h-14 px-10 border-white/20 bg-white/5 hover:bg-white/10 text-white whitespace-nowrap" data-testid="btn-services-phone">
                   +7 (910) 595-46-68
                 </Button>
               </a>

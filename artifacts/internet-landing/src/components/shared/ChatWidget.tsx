@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { X, Send, Bot, User, Sparkles } from "lucide-react";
 import { GoogleGenAI } from "@google/genai";
+import ReactMarkdown from "react-markdown";
 
 const SYSTEM_PROMPT = `Ты — AI-помощник компании Openweb40.ru, интернет-провайдера для загородных домов, дач и коттеджей в Калужской области, Россия.
 
@@ -14,9 +15,9 @@ const SYSTEM_PROMPT = `Ты — AI-помощник компании Openweb40.r
 - Telegram: @krisdev13
 
 Тарифы:
-- Стандарт: до 30 Мбит/с, 2 990 ₽/мес, гарантия 1 год
-- Оптимальный: до 100 Мбит/с, 4 990 ₽/мес, гарантия 2 года, VPN включён
-- Максимум: до 300 Мбит/с, 7 990 ₽/мес, гарантия 3 года, VPN + персональный менеджер 24/7
+- Стандарт: до 30 Мбит/с, 10 000 ₽/мес, гарантия 1 год
+- Оптимальный: до 100 Мбит/с, 20 000 ₽/мес, гарантия 2 года, VPN включён
+- Максимум: до 300 Мбит/с, 30 000 ₽/мес, гарантия 3 года, VPN включён, приоритетная поддержка 24/7
 
 Услуги: 4G/5G агрегация, спутниковый интернет (Starlink), Mesh Wi-Fi, VPN, резервирование канала, техобслуживание.
 
@@ -202,15 +203,22 @@ export default function ChatWidget() {
                   }
                 </div>
                 <div className={`max-w-[85%] px-3 py-2 rounded-xl text-sm leading-relaxed ${msg.role === "assistant" ? "bg-white/5 text-foreground" : "bg-primary/80 text-white"}`}>
-                  {msg.text || (msg.streaming && (
-                    <span className="flex gap-1 items-center h-4">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary/60 animate-bounce" style={{ animationDelay: "0ms" }} />
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary/60 animate-bounce" style={{ animationDelay: "150ms" }} />
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary/60 animate-bounce" style={{ animationDelay: "300ms" }} />
-                    </span>
-                  ))}
-                  {msg.streaming && msg.text && (
-                    <span className="inline-block w-0.5 h-4 bg-primary/80 animate-pulse ml-0.5 align-middle" />
+                  {msg.role === "assistant" ? (
+                    <div className="prose prose-sm prose-invert max-w-none">
+                      <ReactMarkdown>{msg.text}</ReactMarkdown>
+                      {msg.streaming && !msg.text && (
+                        <span className="flex gap-1 items-center h-4 mt-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary/60 animate-bounce" style={{ animationDelay: "0ms" }} />
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary/60 animate-bounce" style={{ animationDelay: "150ms" }} />
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary/60 animate-bounce" style={{ animationDelay: "300ms" }} />
+                        </span>
+                      )}
+                      {msg.streaming && msg.text && (
+                        <span className="inline-block w-0.5 h-4 bg-primary/80 animate-pulse ml-0.5 align-middle" />
+                      )}
+                    </div>
+                  ) : (
+                    msg.text
                   )}
                 </div>
               </div>

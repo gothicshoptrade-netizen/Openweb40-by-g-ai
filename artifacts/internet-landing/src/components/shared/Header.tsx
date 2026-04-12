@@ -94,7 +94,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href="tel:+79105954668"
-            className="hidden lg:flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
+            className="hidden lg:flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors whitespace-nowrap"
             data-testid="link-header-phone"
           >
             <PhoneCall className="w-4 h-4 text-primary" />
@@ -154,7 +154,7 @@ export default function Header() {
             <div className="h-px bg-white/10 my-2" />
             <a
               href="tel:+79105954668"
-              className="flex items-center gap-2 px-4 py-3 text-sm font-semibold text-white"
+              className="flex items-center gap-2 px-4 py-3 text-sm font-semibold text-white whitespace-nowrap"
             >
               <PhoneCall className="w-4 h-4 text-primary" />
               +7 (910) 595-46-68

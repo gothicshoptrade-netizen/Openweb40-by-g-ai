@@ -87,7 +87,9 @@ export default function ContactFormSection() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-foreground mb-1">{item.title}</p>
-                    <p className="text-sm text-muted-foreground whitespace-pre-line">{item.value}</p>
+                    <p className={`text-sm text-muted-foreground ${item.title === "Телефон" ? "whitespace-nowrap" : "whitespace-pre-line"}`}>
+                      {item.value}
+                    </p>
                   </div>
                 </div>
               );

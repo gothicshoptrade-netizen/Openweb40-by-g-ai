@@ -179,7 +179,7 @@ export default function ContactsPage() {
                 </Button>
               </Link>
               <a href="tel:+79105954668">
-                <Button size="sm" variant="outline" className="h-11 px-8 border-white/20 bg-white/5 hover:bg-white/10 text-white">
+                <Button size="sm" variant="outline" className="h-11 px-8 border-white/20 bg-white/5 hover:bg-white/10 text-white whitespace-nowrap">
                   +7 (910) 595-46-68
                 </Button>
               </a>

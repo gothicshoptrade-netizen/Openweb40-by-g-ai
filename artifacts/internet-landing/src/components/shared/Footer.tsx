@@ -35,7 +35,7 @@ export default function Footer() {
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Надёжный и быстрый интернет для вашего загородного дома. Решаем проблемы со связью там, где другие сдаются.
             </p>
-            <a href="tel:+79105954668" className="inline-flex items-center gap-2 text-white font-semibold hover:text-primary transition-colors" data-testid="link-footer-phone">
+            <a href="tel:+79105954668" className="inline-flex items-center gap-2 text-white font-semibold hover:text-primary transition-colors whitespace-nowrap" data-testid="link-footer-phone">
               <Phone className="w-4 h-4 text-primary" />
               +7 (910) 595-46-68
             </a>
