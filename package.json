@@ -20,5 +20,10 @@
     "@google/generative-ai": "^0.24.1",
     "motion": "^12.38.0",
     "react-markdown": "^10.1.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "node-domexception": "1.0.0"
+    }
   }
 }
